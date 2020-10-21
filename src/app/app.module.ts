@@ -8,7 +8,7 @@ import { CartComponent } from './cart/cart.component';
 import { ProductComponent } from './product/product.component';
 import { StoreModule } from "@ngrx/store";
 import { reducer } from './store/reducer';
-
+// module 
 @NgModule({
   declarations: [
     AppComponent,
