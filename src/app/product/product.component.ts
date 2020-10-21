@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PRODUCTS } from "./../store/market";
 import { Product } from "./../store/products.model"
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { Store } from "@ngrx/store";
 import * as Cart from "./../store/actions";
 
@@ -15,7 +15,7 @@ export class ProductComponent implements OnInit {
 
   product:Product
 
-  constructor(private route: ActivatedRoute, private store: Store<any>) { }
+  constructor(private route: ActivatedRoute, private router: Router, private store: Store<any>) { }
 
   ngOnInit() {
     this.route.params.subscribe((p)=>{
@@ -28,6 +28,7 @@ export class ProductComponent implements OnInit {
   }
 
   addToCart(product) {
-        this.store.dispatch(new Cart.AddProduct(product))
+        this.store.dispatch(new Cart.AddProduct(product));
+        this.router.navigate(['/cart'], { relativeTo: this.route });
   }
 }

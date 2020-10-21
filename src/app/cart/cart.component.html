@@ -2,8 +2,10 @@
     <div class="my-list">
         <img src="http://hpservicecenterschennai.in/images/hp_laptop_service_centers_in_guindy.png" alt="" />
         <h3>{{product.name}}</h3>
-        <span>$</span>
-        <span class="pull-right">{{product.price}}</span>
+        <span></span>
+        <span class="pull-right">Price: $ {{product.price}}</span>
+        <br/>
+        <span class="pull-right">ID: {{product.id}}</span>
         <div class="offer">
           Extra 5% Off. Cart value $ {{0.5 * product.price}}
           <a (click)="removeFromCart(product)" class="btn btn-info">Remove From Cart</a>
